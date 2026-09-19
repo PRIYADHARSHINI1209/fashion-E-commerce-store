@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉLÉGANCE | Luxury & Contemporary Fashion</title>
+  <meta name="description" content="Discover modern luxury apparel, silk dresses, coats, and Italian leather accessories crafted with timeless aesthetic design.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary Express Shipping on Orders Over $100 &nbsp;|&nbsp; <span>CODE: ELEGANCE</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <!-- Mobile Hamburger Toggle -->
+      <button class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo">
+        ÉLÉGANCE<span class="logo-dot"></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="shop.html?gender=women" class="nav-link">Women</a>
+        <a href="shop.html?gender=men" class="nav-link">Men</a>
+        <a href="shop.html?category=accessories" class="nav-link">Accessories</a>
+        <a href="shop.html?sort=newest" class="nav-link">New Arrivals</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="shop.html?search=true" class="icon-btn" aria-label="Search Products">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </a>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">ÉLÉGANCE<span class="logo-dot"></span></a>
+      <button class="icon-btn" id="mobile-drawer-close" aria-label="Close Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active">Home</a>
+      <a href="shop.html" class="mobile-nav-link">Shop All</a>
+      <a href="shop.html?gender=women" class="mobile-nav-link">Women's Collection</a>
+      <a href="shop.html?gender=men" class="mobile-nav-link">Men's Collection</a>
+      <a href="shop.html?category=accessories" class="mobile-nav-link">Accessories</a>
+      <a href="shop.html?sort=newest" class="mobile-nav-link">New Arrivals</a>
+      <a href="wishlist.html" class="mobile-nav-link">My Wishlist</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Bag</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- 1. MODERN SHOWCASE HERO SECTION (MATCHING REFERENCE DESIGN) -->
+    <section class="hero-section-modern">
+      <div class="container">
+        <div class="hero-modern-grid">
+          <!-- Left Content -->
+          <div>
+            <div class="hero-subtitle-caps">AUTUMN / WINTER '26 ATELIER</div>
+            <h1 class="hero-title-modern">ÉLÉGANCE</h1>
+            <div class="hero-title-sub">Haute Couture</div>
+
+            <div class="hero-control-card">
+              <span style="font-size: var(--font-size-xs); color: var(--color-text-muted); font-weight: bold;">Choose your</span>
+              <div class="hero-qty-pill">
+                <button id="hero-qty-minus" style="font-weight: bold; color: var(--color-primary-pink); border: none; background: none; cursor: pointer;">&#9660;</button>
+                <span id="hero-qty-num" style="font-weight: bold; color: var(--color-text-main);">1</span>
+                <button id="hero-qty-plus" style="font-weight: bold; color: var(--color-primary-pink); border: none; background: none; cursor: pointer;">&#9650;</button>
+              </div>
+              <button id="hero-buy-now-btn" class="btn btn-primary" style="border-radius: var(--radius-full); padding: 0.75rem 1.6rem; background: linear-gradient(135deg, var(--color-primary-pink) 0%, var(--color-dark-pink) 100%); border: none; box-shadow: 0 6px 20px rgba(219, 39, 119, 0.35);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                Buy Now
+              </button>
+            </div>
+
+            <div style="margin-top: 1rem;">
+              <a href="shop.html" style="font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: var(--color-primary-pink); display: inline-flex; align-items: center; gap: 0.5rem;">
+                Explore Haute Couture Collection &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Stage Circle Showcase -->
+          <div class="hero-circle-stage">
+            <!-- Large Circular Pink Accent Backdrop -->
+            <div class="hero-bg-circle"></div>
+
+            <!-- Featured Fashion Cutout Image -->
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80" alt="Minimalist Silk Fashion Collection" class="hero-main-cutout-img">
+
+            <!-- Floating Glass Badges -->
+            <div class="floating-pill top-right">Minimalistic</div>
+            <div class="floating-pill bottom-left">¡Super cozy!</div>
+
+            <!-- Stacked Circle Preview Badges -->
+            <div class="stacked-thumbs-col">
+              <a href="product.html?id=105" class="thumb-circle" title="Leather Bag">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300&auto=format&fit=crop&q=80" alt="Leather Bag">
+              </a>
+              <a href="product.html?id=103" class="thumb-circle" title="Tailored Blazer">
+                <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?w=300&auto=format&fit=crop&q=80" alt="Tailored Blazer">
+              </a>
+              <a href="product.html?id=106" class="thumb-circle" title="Italian Heels">
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300&auto=format&fit=crop&q=80" alt="Italian Heels">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTINUOUS FASHION MARQUEE TICKER -->
+    <div class="fashion-marquee-bar">
+      <div class="marquee-track">
+        <span>PARISIAN SILK ATELIER</span> &bull;
+        <span>ITALIAN LEATHER & TAILORING</span> &bull;
+        <span>HAUTE COUTURE 2026</span> &bull;
+        <span>ETHICALLY CRAFTED</span> &bull;
+        <span>COMPLIMENTARY EXPRESS SHIPPING OVER $100</span> &bull;
+        <span>PARISIAN SILK ATELIER</span> &bull;
+        <span>ITALIAN LEATHER & TAILORING</span> &bull;
+        <span>HAUTE COUTURE 2026</span> &bull;
+        <span>ETHICALLY CRAFTED</span> &bull;
+        <span>COMPLIMENTARY EXPRESS SHIPPING OVER $100</span>
+      </div>
+    </div>
+
+    <!-- 2. SHOP BY CATEGORY -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Shop By Category</h2>
+        <p class="section-subtitle">Curated Style Collections</p>
+
+        <div class="category-grid">
+          <!-- Women -->
+          <a href="shop.html?gender=women" class="category-card">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80" alt="Women's Collection" class="category-card-bg">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">COLLECTION</span>
+              <h3 class="category-card-title">Women</h3>
+              <span class="category-card-link">Explore Dresses & Tops &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Men -->
+          <a href="shop.html?gender=men" class="category-card">
+            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&auto=format&fit=crop&q=80" alt="Men's Tailoring Collection" class="category-card-bg">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">COLLECTION</span>
+              <h3 class="category-card-title">Men</h3>
+              <span class="category-card-link">Explore Suits & Shirts &rarr;</span>
+            </div>
+          </a>
+
+          <!-- Accessories -->
+          <a href="shop.html?category=accessories" class="category-card">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop&q=80" alt="Luxury Accessories" class="category-card-bg">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">ESSENTIALS</span>
+              <h3 class="category-card-title">Accessories</h3>
+              <span class="category-card-link">Bags, Watches & Jewelry &rarr;</span>
+            </div>
+          </a>
+
+          <!-- New Arrivals -->
+          <a href="shop.html?sort=newest" class="category-card">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop&q=80" alt="New Arrivals Drops" class="category-card-bg">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">SEASONAL</span>
+              <h3 class="category-card-title">New Arrivals</h3>
+              <span class="category-card-link">Fresh Fashion Drops &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. NEW ARRIVALS -->
+    <section class="section bg-soft-pink">
+      <div class="container">
+        <h2 class="section-title">New Arrivals</h2>
+        <p class="section-subtitle">Freshly Added To The Atelier</p>
+
+        <div class="product-grid" id="homepage-new-arrivals-grid">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.5 EDITORIAL STYLED LOOKBOOK -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <span class="badge badge-pink" style="margin-bottom: 0.5rem;">EDITORIAL</span>
+          <h2 class="section-title">The Styled Lookbook</h2>
+          <p class="section-subtitle">Curated Outfits & Seasonal Style Stories</p>
+        </div>
+
+        <div class="lookbook-grid">
+          <!-- Look 1 -->
+          <div class="lookbook-card">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80" alt="Silk Evening Glow Look" class="lookbook-img">
+            <div class="lookbook-overlay">
+              <span class="lookbook-tag">LOOK 01</span>
+              <h3 class="lookbook-title">Silk Evening Glow</h3>
+              <p class="lookbook-desc">Fluid Mulberry silk silhouettes paired with Italian gold accents for effortless dusk elegance.</p>
+              <a href="shop.html?category=dresses" class="lookbook-link">Shop The Look &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Look 2 -->
+          <div class="lookbook-card">
+            <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?w=800&auto=format&fit=crop&q=80" alt="Monochrome Tailoring Look" class="lookbook-img">
+            <div class="lookbook-overlay">
+              <span class="lookbook-tag">LOOK 02</span>
+              <h3 class="lookbook-title">Monochrome Tailoring</h3>
+              <p class="lookbook-desc">Precision-cut Italian wool blazers designed for structural elegance and timeless power dressing.</p>
+              <a href="shop.html?category=outerwear" class="lookbook-link">Shop Tailoring &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Look 3 -->
+          <div class="lookbook-card">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop&q=80" alt="Artisanal Leather Accessories" class="lookbook-img">
+            <div class="lookbook-overlay">
+              <span class="lookbook-tag">LOOK 03</span>
+              <h3 class="lookbook-title">Artisanal Leather</h3>
+              <p class="lookbook-desc">Handcrafted Florentine leather totes and sculpted pumps built for sustainable daily luxury.</p>
+              <a href="shop.html?category=accessories" class="lookbook-link">Shop Accessories &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FEATURED PROMO SECTION -->
+    <section class="section">
+      <div class="container">
+        <div class="promo-section" style="background: linear-gradient(to right, rgba(219, 39, 119, 0.9), rgba(190, 24, 93, 0.85)), url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&auto=format&fit=crop&q=80') center/cover no-repeat;">
+          <span class="badge badge-pink" style="margin-bottom: 1rem; background-color: var(--color-white); color: var(--color-primary-pink);">EXCLUSIVE OFFER</span>
+          <h2 class="promo-title">The Silk & Cashmere Edit</h2>
+          <p class="promo-desc">Enjoy 20% off selected luxury tailoring & silk garments with complimentary gift wrapping on all orders above $100.</p>
+          <a href="shop.html" class="btn btn-secondary">Shop Promo Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BEST SELLERS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Best Sellers</h2>
+        <p class="section-subtitle">Most Loved By Our Atelier Clients</p>
+
+        <div class="product-grid" id="homepage-bestsellers-grid">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BRAND VALUE & FEATURES -->
+    <section class="section bg-soft-pink">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Complimentary Shipping</h3>
+            <p class="feature-desc">Free worldwide express shipping on orders over $100.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">30-Day Easy Returns</h3>
+            <p class="feature-desc">Hassle-free return policy with pre-paid return labels.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Artisanal Craftsmanship</h3>
+            <p class="feature-desc">Ethically sourced, high-grade organic silks and wools.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">Secure Checkout</h3>
+            <p class="feature-desc">Encrypted payment security & instant order tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. NEWSLETTER SECTION -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter-box">
+          <span class="badge badge-pink" style="margin-bottom: 0.5rem;">ATELIER CLUB</span>
+          <h2 class="section-title">Join The Élégance Society</h2>
+          <p class="section-subtitle" style="margin-bottom: 1rem;">Receive 15% Off Your First Purchase & VIP Early Access</p>
+          <form class="newsletter-form" id="homepage-newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">ÉLÉGANCE<span class="logo-dot"></span></a>
+          <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 1rem;">
+            Redefining contemporary luxury through classic lines, pristine tailoring, and conscious craftsmanship.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?gender=women">Women's Fashion</a></li>
+            <li><a href="shop.html?gender=men">Men's Tailoring</a></li>
+            <li><a href="shop.html?category=accessories">Accessories & Leather</a></li>
+            <li><a href="shop.html?sort=newest">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact Atelier</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Size & Care Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Legal & Policy</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+            <li><a href="#">Sustainability Commitment</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ÉLÉGANCE Atelier. All rights reserved. Pure HTML5, CSS3 & Vanilla JavaScript.</p>
+        <p>Crafted with Pink & White Minimalist Aesthetics.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hero Stepper & Buy Now Handler
+      let heroQty = 1;
+      const heroQtyNum = document.getElementById('hero-qty-num');
+      const heroQtyMinus = document.getElementById('hero-qty-minus');
+      const heroQtyPlus = document.getElementById('hero-qty-plus');
+      const heroBuyNowBtn = document.getElementById('hero-buy-now-btn');
+
+      if (heroQtyMinus && heroQtyPlus && heroQtyNum) {
+        heroQtyMinus.addEventListener('click', () => {
+          if (heroQty > 1) {
+            heroQty--;
+            heroQtyNum.textContent = heroQty;
+          }
+        });
+        heroQtyPlus.addEventListener('click', () => {
+          heroQty++;
+          heroQtyNum.textContent = heroQty;
+        });
+      }
+
+      if (heroBuyNowBtn) {
+        heroBuyNowBtn.addEventListener('click', () => {
+          AppState.addToCart(101, heroQty, 'Blush Pink', 'S');
+          window.location.href = 'checkout.html';
+        });
+      }
+
+      // Render Homepage New Arrivals (First 4 items)
+      const newArrivalsGrid = document.getElementById('homepage-new-arrivals-grid');
+      if (newArrivalsGrid) {
+        const newArrivals = PRODUCTS_DATA.filter(p => p.newArrival).slice(0, 4);
+        newArrivalsGrid.innerHTML = newArrivals.map(createProductCardHTML).join('');
+      }
+
+      // Render Homepage Best Sellers (First 4 items)
+      const bestSellersGrid = document.getElementById('homepage-bestsellers-grid');
+      if (bestSellersGrid) {
+        const bestSellers = PRODUCTS_DATA.filter(p => p.bestSeller).slice(0, 4);
+        bestSellersGrid.innerHTML = bestSellers.map(createProductCardHTML).join('');
+      }
+
+      // Newsletter form submission handler
+      const newsletterForm = document.getElementById('homepage-newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const email = newsletterForm.querySelector('input[type="email"]').value;
+          showToast(`Thank you for subscribing! Check ${email} for your 15% discount code.`);
+          newsletterForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

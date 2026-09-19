@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Collection | ÉLÉGANCE</title>
+  <meta name="description" content="Explore our luxury fashion collection including silk dresses, coats, tailoring, shoes, and handcrafted accessories.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary Express Shipping on Orders Over $100 &nbsp;|&nbsp; <span>CODE: ELEGANCE</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <button class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <a href="index.html" class="brand-logo">
+        ÉLÉGANCE<span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Shop</a>
+        <a href="shop.html?gender=women" class="nav-link">Women</a>
+        <a href="shop.html?gender=men" class="nav-link">Men</a>
+        <a href="shop.html?category=accessories" class="nav-link">Accessories</a>
+        <a href="shop.html?sort=newest" class="nav-link">New Arrivals</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html?search=true" class="icon-btn" aria-label="Search Products">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </a>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">ÉLÉGANCE<span class="logo-dot"></span></a>
+      <button class="icon-btn" id="mobile-drawer-close" aria-label="Close Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="shop.html" class="mobile-nav-link active">Shop All</a>
+      <a href="shop.html?gender=women" class="mobile-nav-link">Women's Collection</a>
+      <a href="shop.html?gender=men" class="mobile-nav-link">Men's Collection</a>
+      <a href="shop.html?category=accessories" class="mobile-nav-link">Accessories</a>
+      <a href="shop.html?sort=newest" class="mobile-nav-link">New Arrivals</a>
+      <a href="wishlist.html" class="mobile-nav-link">My Wishlist</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Bag</a>
+    </nav>
+  </aside>
+
+  <!-- Slide-In Filter Drawer Overlay & Panel -->
+  <div class="filter-drawer-overlay" id="filter-drawer-overlay"></div>
+  <aside class="filter-drawer-panel" id="filter-drawer-panel" aria-label="Filter Panel">
+    <div class="filter-drawer-header">
+      <h2 style="font-family: var(--font-family-serif); font-size: var(--font-size-xl);">Filter Products</h2>
+      <button class="icon-btn" id="close-filter-drawer" aria-label="Close Filter Drawer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="filter-drawer-body">
+      <!-- Category Filter -->
+      <div class="filter-group">
+        <h3 class="filter-title">Category Name</h3>
+        <div class="filter-options">
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="all" checked> All Categories
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="dresses"> Dresses
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="outerwear"> Outerwear & Coats
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="shirts"> Shirts & Tops
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="knitwear"> Knitwear
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="pants"> Pants & Trousers
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="bags"> Handbags
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="shoes"> Shoes
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="category-filter" value="accessories"> Accessories & Jewelry
+          </label>
+        </div>
+      </div>
+
+      <!-- Gender Line Filter -->
+      <div class="filter-group">
+        <h3 class="filter-title">Gender / Line</h3>
+        <div class="filter-options">
+          <label class="filter-label">
+            <input type="radio" name="gender-filter" value="all" checked> All Lines
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="gender-filter" value="women"> Women
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="gender-filter" value="men"> Men
+          </label>
+          <label class="filter-label">
+            <input type="radio" name="gender-filter" value="unisex"> Unisex
+          </label>
+        </div>
+      </div>
+
+      <!-- Max Price Filter -->
+      <div class="filter-group">
+        <h3 class="filter-title">Max Price: <span id="price-value" class="text-pink">$400</span></h3>
+        <input type="range" id="price-slider" class="price-range-slider" min="50" max="400" step="10" value="400">
+        <div class="price-range-labels">
+          <span>$50</span>
+          <span>$400</span>
+        </div>
+      </div>
+
+      <button id="reset-filters-btn" class="btn btn-secondary" style="width: 100%; margin-top: 1rem; font-size: var(--font-size-xs);">Reset All Filters</button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Shop Collection</h1>
+        <p class="section-subtitle">Curated Minimalist & Luxury Tailoring</p>
+
+        <!-- Category Chips Quick Filter Bar -->
+        <div class="category-chips-bar" id="category-chips">
+          <button class="category-chip active" data-chip-category="all">All Categories</button>
+          <button class="category-chip" data-chip-category="dresses">Dresses</button>
+          <button class="category-chip" data-chip-category="outerwear">Outerwear & Coats</button>
+          <button class="category-chip" data-chip-category="shirts">Shirts & Tops</button>
+          <button class="category-chip" data-chip-category="knitwear">Knitwear</button>
+          <button class="category-chip" data-chip-category="pants">Pants & Trousers</button>
+          <button class="category-chip" data-chip-category="bags">Handbags</button>
+          <button class="category-chip" data-chip-category="shoes">Shoes</button>
+          <button class="category-chip" data-chip-category="accessories">Accessories & Jewelry</button>
+        </div>
+
+        <!-- Top Control Bar with PINK ICON-ONLY FILTER BUTTON -->
+        <div class="shop-topbar">
+          <button id="filter-toggle-btn" class="filter-icon-btn" aria-label="Toggle Filter Drawer" title="Filter & Refine">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+          </button>
+
+          <div class="shop-search-wrapper">
+            <svg class="shop-search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" id="shop-search-input" class="shop-search-input" placeholder="Search by dress, wool coat, silk..." aria-label="Search products">
+          </div>
+
+          <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+            Showing <strong id="product-count" style="color: var(--color-text-main);">0</strong> items
+          </div>
+
+          <div class="shop-sort-wrapper">
+            <label for="sort-select">Sort By:</label>
+            <select id="sort-select" class="shop-sort-select">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest Arrivals</option>
+              <option value="popular">Most Popular</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Product Grid & Empty State -->
+        <div>
+          <div class="product-grid" id="shop-products-grid"></div>
+          <div class="empty-state" id="empty-state" style="display: none;">
+            <h3 class="empty-state-title">No Products Found</h3>
+            <p class="empty-state-desc">We couldn't find any items matching your search criteria. Try adjusting your filters or search keywords.</p>
+            <button id="clear-search-btn" class="btn btn-primary">Clear Filters & View All</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <p>&copy; 2026 ÉLÉGANCE Atelier. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // DOM Elements
+      const productsGrid = document.getElementById('shop-products-grid');
+      const emptyState = document.getElementById('empty-state');
+      const productCountEl = document.getElementById('product-count');
+      const searchInput = document.getElementById('shop-search-input');
+      const sortSelect = document.getElementById('sort-select');
+      const priceSlider = document.getElementById('price-slider');
+      const priceValue = document.getElementById('price-value');
+      const resetFiltersBtn = document.getElementById('reset-filters-btn');
+      const clearSearchBtn = document.getElementById('clear-search-btn');
+
+      // Slide-in Drawer Elements
+      const filterToggleBtn = document.getElementById('filter-toggle-btn');
+      const filterDrawerPanel = document.getElementById('filter-drawer-panel');
+      const filterDrawerOverlay = document.getElementById('filter-drawer-overlay');
+      const closeFilterDrawerBtn = document.getElementById('close-filter-drawer');
+
+      function openFilterDrawer() {
+        filterDrawerPanel.classList.add('active');
+        filterDrawerOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeFilterDrawer() {
+        filterDrawerPanel.classList.remove('active');
+        filterDrawerOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      filterToggleBtn.addEventListener('click', openFilterDrawer);
+      closeFilterDrawerBtn.addEventListener('click', closeFilterDrawer);
+      filterDrawerOverlay.addEventListener('click', closeFilterDrawer);
+
+      // Read URL Params for Initial Filters
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialGender = urlParams.get('gender');
+      const initialCategory = urlParams.get('category');
+      const initialSort = urlParams.get('sort');
+      const initialSearch = urlParams.get('search');
+
+      if (initialGender) {
+        const radio = document.querySelector(`input[name="gender-filter"][value="${initialGender}"]`);
+        if (radio) radio.checked = true;
+      }
+
+      if (initialCategory) {
+        const radio = document.querySelector(`input[name="category-filter"][value="${initialCategory}"]`);
+        if (radio) radio.checked = true;
+        updateChipsUI(initialCategory);
+      }
+
+      if (initialSort) {
+        sortSelect.value = initialSort;
+      }
+
+      if (initialSearch === 'true') {
+        searchInput.focus();
+      }
+
+      function updateChipsUI(catVal) {
+        document.querySelectorAll('.category-chip').forEach(chip => {
+          if (chip.getAttribute('data-chip-category') === catVal) {
+            chip.classList.add('active');
+          } else {
+            chip.classList.remove('active');
+          }
+        });
+      }
+
+      // Filter & Sort Logic
+      function filterAndRenderProducts() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        const selectedCategory = document.querySelector('input[name="category-filter"]:checked').value;
+        const selectedGender = document.querySelector('input[name="gender-filter"]:checked').value;
+        const maxPrice = Number(priceSlider.value);
+        const sortBy = sortSelect.value;
+
+        priceValue.textContent = `$${maxPrice}`;
+        updateChipsUI(selectedCategory);
+
+        let filtered = PRODUCTS_DATA.filter(product => {
+          if (selectedCategory !== 'all' && product.category !== selectedCategory) {
+            return false;
+          }
+          if (selectedGender !== 'all' && product.gender !== selectedGender) {
+            return false;
+          }
+          if (product.price > maxPrice) {
+            return false;
+          }
+          if (searchTerm) {
+            const nameMatch = product.name.toLowerCase().includes(searchTerm);
+            const catMatch = product.category.toLowerCase().includes(searchTerm);
+            const descMatch = product.description.toLowerCase().includes(searchTerm);
+            const matMatch = product.material.toLowerCase().includes(searchTerm);
+            return nameMatch || catMatch || descMatch || matMatch;
+          }
+          return true;
+        });
+
+        // Sorting
+        if (sortBy === 'price-low') {
+          filtered.sort((a, b) => a.price - b.price);
+        } else if (sortBy === 'price-high') {
+          filtered.sort((a, b) => b.price - a.price);
+        } else if (sortBy === 'newest') {
+          filtered.sort((a, b) => (b.newArrival ? 1 : 0) - (a.newArrival ? 1 : 0));
+        } else if (sortBy === 'popular') {
+          filtered.sort((a, b) => b.rating - a.rating);
+        }
+
+        // Render UI
+        productCountEl.textContent = filtered.length;
+
+        if (filtered.length === 0) {
+          productsGrid.style.display = 'none';
+          emptyState.style.display = 'block';
+        } else {
+          emptyState.style.display = 'none';
+          productsGrid.style.display = 'grid';
+          productsGrid.innerHTML = filtered.map(createProductCardHTML).join('');
+        }
+
+        AppState.updateWishlistButtonsUI();
+      }
+
+      // Chip click events
+      document.querySelectorAll('.category-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const cat = chip.getAttribute('data-chip-category');
+          const radio = document.querySelector(`input[name="category-filter"][value="${cat}"]`);
+          if (radio) radio.checked = true;
+          filterAndRenderProducts();
+        });
+      });
+
+      // Event Listeners
+      searchInput.addEventListener('input', filterAndRenderProducts);
+      sortSelect.addEventListener('change', filterAndRenderProducts);
+      priceSlider.addEventListener('input', filterAndRenderProducts);
+      
+      document.querySelectorAll('input[name="category-filter"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          filterAndRenderProducts();
+        });
+      });
+
+      document.querySelectorAll('input[name="gender-filter"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          filterAndRenderProducts();
+        });
+      });
+
+      function resetAllFilters() {
+        searchInput.value = '';
+        sortSelect.value = 'featured';
+        priceSlider.value = 400;
+        document.querySelector('input[name="category-filter"][value="all"]').checked = true;
+        document.querySelector('input[name="gender-filter"][value="all"]').checked = true;
+        filterAndRenderProducts();
+      }
+
+      resetFiltersBtn.addEventListener('click', resetAllFilters);
+      clearSearchBtn.addEventListener('click', resetAllFilters);
+
+      // Initial Render
+      filterAndRenderProducts();
+    });
+  </script>
+</body>
+</html>

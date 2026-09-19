@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | ÉLÉGANCE</title>
+  <meta name="description" content="Secure frontend checkout flow for your luxury fashion order.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary Express Shipping on Orders Over $100 &nbsp;|&nbsp; <span>CODE: ELEGANCE</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <button class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <a href="index.html" class="brand-logo">
+        ÉLÉGANCE<span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="shop.html?gender=women" class="nav-link">Women</a>
+        <a href="shop.html?gender=men" class="nav-link">Men</a>
+        <a href="shop.html?category=accessories" class="nav-link">Accessories</a>
+        <a href="shop.html?sort=newest" class="nav-link">New Arrivals</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html?search=true" class="icon-btn" aria-label="Search Products">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </a>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">ÉLÉGANCE<span class="logo-dot"></span></a>
+      <button class="icon-btn" id="mobile-drawer-close" aria-label="Close Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="shop.html" class="mobile-nav-link">Shop All</a>
+      <a href="shop.html?gender=women" class="mobile-nav-link">Women's Collection</a>
+      <a href="shop.html?gender=men" class="mobile-nav-link">Men's Collection</a>
+      <a href="shop.html?category=accessories" class="mobile-nav-link">Accessories</a>
+      <a href="shop.html?sort=newest" class="mobile-nav-link">New Arrivals</a>
+      <a href="wishlist.html" class="mobile-nav-link">My Wishlist</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Bag</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Checkout</h1>
+        <p class="section-subtitle">Complete Your Luxury Order</p>
+
+        <div id="checkout-container">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <p>&copy; 2026 ÉLÉGANCE Atelier. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('checkout-container');
+
+      function renderCheckoutForm() {
+        if (AppState.cart.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <h2 class="empty-state-title">Your Bag is Empty</h2>
+              <p class="empty-state-desc">Please add items to your shopping bag before proceeding to checkout.</p>
+              <a href="shop.html" class="btn btn-primary">Browse Atelier Collection</a>
+            </div>
+          `;
+          return;
+        }
+
+        const subtotal = AppState.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const shippingCost = subtotal >= 100 ? 0 : 15;
+        const estimatedTax = subtotal * 0.08;
+        let discount = 0;
+        let totalCost = subtotal + shippingCost + estimatedTax;
+
+        container.innerHTML = `
+          <div class="checkout-layout">
+            <!-- Left: Checkout Forms -->
+            <div>
+              <form id="checkout-form">
+                <!-- 1. Customer Contact Info -->
+                <div class="checkout-form-card">
+                  <h2 class="form-title">1. Customer Contact</h2>
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label class="form-label">First Name *</label>
+                      <input type="text" required class="form-input" placeholder="Eleanor">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Last Name *</label>
+                      <input type="text" required class="form-input" placeholder="Vance">
+                    </div>
+                    <div class="form-group full-width">
+                      <label class="form-label">Email Address *</label>
+                      <input type="email" required class="form-input" placeholder="eleanor.vance@example.com">
+                    </div>
+                    <div class="form-group full-width">
+                      <label class="form-label">Phone Number *</label>
+                      <input type="tel" required class="form-input" placeholder="+1 (555) 019-2834">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. Shipping Address -->
+                <div class="checkout-form-card">
+                  <h2 class="form-title">2. Shipping Address</h2>
+                  <div class="form-grid">
+                    <div class="form-group full-width">
+                      <label class="form-label">Street Address *</label>
+                      <input type="text" required class="form-input" placeholder="740 Fifth Avenue, Suite 1200">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">City *</label>
+                      <input type="text" required class="form-input" placeholder="New York">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Postal / Zip Code *</label>
+                      <input type="text" required class="form-input" placeholder="10019">
+                    </div>
+                    <div class="form-group full-width">
+                      <label class="form-label">Country *</label>
+                      <input type="text" required class="form-input" value="United States" readonly>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. Payment Method -->
+                <div class="checkout-form-card">
+                  <h2 class="form-title">3. Payment Selection</h2>
+                  <div class="payment-method-selector">
+                    <label class="payment-option-label active">
+                      <input type="radio" name="payment-method" value="card" checked>
+                      <div>
+                        <strong>Credit / Debit Card</strong>
+                        <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Visa, MasterCard, American Express</div>
+                      </div>
+                    </label>
+
+                    <label class="payment-option-label">
+                      <input type="radio" name="payment-method" value="applepay">
+                      <div>
+                        <strong>Apple Pay / Google Pay</strong>
+                        <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Instant express digital checkout</div>
+                      </div>
+                    </label>
+
+                    <label class="payment-option-label">
+                      <input type="radio" name="payment-method" value="cod">
+                      <div>
+                        <strong>Cash on Delivery / Pay on Arrival</strong>
+                        <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Pay upon receiving physical delivery</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: var(--font-size-md);">Place Order &rarr;</button>
+              </form>
+            </div>
+
+            <!-- Right: Order Summary Sidebar -->
+            <div class="cart-summary-card">
+              <h2 class="cart-summary-title">Order Items (${AppState.cart.reduce((a,b)=>a+b.quantity,0)})</h2>
+              
+              <div style="max-height: 240px; overflow-y: auto; margin-bottom: 1rem;">
+                ${AppState.cart.map(item => `
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; font-size: var(--font-size-xs);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                      <img src="${item.image}" alt="${item.name}" style="width: 36px; height: 44px; object-fit: cover; border-radius: 4px;">
+                      <div>
+                        <strong style="display: block;">${item.name}</strong>
+                        <span style="color: var(--color-text-muted);">${item.color} | Qty: ${item.quantity}</span>
+                      </div>
+                    </div>
+                    <span style="font-weight: bold;">$${(item.price * item.quantity).toFixed(2)}</span>
+                  </div>
+                `).join('')}
+              </div>
+
+              <!-- Promo Code Input -->
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+                <input type="text" id="promo-code-input" class="form-input" placeholder="Promo code (ELEGANCE)" style="font-size: var(--font-size-xs);">
+                <button type="button" id="apply-promo-btn" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: var(--font-size-xs);">Apply</button>
+              </div>
+              <div id="promo-msg" style="font-size: var(--font-size-xs); margin-bottom: 0.5rem; display: none;"></div>
+
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span>$${subtotal.toFixed(2)}</span>
+              </div>
+              <div class="summary-row" id="discount-row" style="display: none;">
+                <span class="text-pink">Discount (ELEGANCE 15%)</span>
+                <span class="text-pink" id="discount-val">-$0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Shipping</span>
+                <span>${shippingCost === 0 ? '<strong class="text-pink">FREE</strong>' : `$${shippingCost.toFixed(2)}`}</span>
+              </div>
+              <div class="summary-row">
+                <span>Estimated Tax</span>
+                <span>$${estimatedTax.toFixed(2)}</span>
+              </div>
+
+              <div class="summary-row total">
+                <span>Total Due</span>
+                <span class="text-pink" id="final-total">$${totalCost.toFixed(2)}</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Payment Option Label Highlights
+        document.querySelectorAll('input[name="payment-method"]').forEach(radio => {
+          radio.addEventListener('change', () => {
+            document.querySelectorAll('.payment-option-label').forEach(l => l.classList.remove('active'));
+            radio.closest('.payment-option-label').classList.add('active');
+          });
+        });
+
+        // Promo Code Logic
+        const applyPromoBtn = document.getElementById('apply-promo-btn');
+        const promoInput = document.getElementById('promo-code-input');
+        const promoMsg = document.getElementById('promo-msg');
+        const discountRow = document.getElementById('discount-row');
+        const discountVal = document.getElementById('discount-val');
+        const finalTotalEl = document.getElementById('final-total');
+
+        if (applyPromoBtn) {
+          applyPromoBtn.addEventListener('click', () => {
+            const code = promoInput.value.trim().toUpperCase();
+            if (code === 'ELEGANCE' || code === 'ELEGANCE15') {
+              discount = subtotal * 0.15;
+              totalCost = (subtotal - discount) + shippingCost + estimatedTax;
+              discountVal.textContent = `-$${discount.toFixed(2)}`;
+              discountRow.style.display = 'flex';
+              finalTotalEl.textContent = `$${totalCost.toFixed(2)}`;
+              promoMsg.style.display = 'block';
+              promoMsg.style.color = 'var(--color-success)';
+              promoMsg.textContent = '✓ Promo code ELEGANCE applied (15% OFF)!';
+            } else {
+              promoMsg.style.display = 'block';
+              promoMsg.style.color = 'var(--color-danger)';
+              promoMsg.textContent = 'Invalid promo code. Try "ELEGANCE".';
+            }
+          });
+        }
+
+        // Form Submit -> Order Confirmation
+        const form = document.getElementById('checkout-form');
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+            
+            // Clear Cart
+            AppState.cart = [];
+            AppState.saveCart();
+
+            // Render Confirmation Screen
+            container.innerHTML = `
+              <div class="order-confirmation-box">
+                <div class="confirmation-check-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="32" height="32">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="badge badge-pink" style="margin-bottom: 0.5rem;">THANK YOU FOR YOUR ORDER</span>
+                <h2 style="font-family: var(--font-family-serif); font-size: var(--font-size-2xl); margin-bottom: 0.5rem;">Order Confirmed</h2>
+                <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: 1.5rem;">
+                  Your order reference is <strong style="color: var(--color-text-main);">${orderId}</strong>. We've sent a detailed receipt and tracking confirmation to your email.
+                </p>
+
+                <div style="background-color: var(--color-soft-bg); padding: 1.25rem; border-radius: var(--radius-md); text-align: left; margin-bottom: 1.5rem; font-size: var(--font-size-sm);">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Order Number:</span>
+                    <strong>${orderId}</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Payment Status:</span>
+                    <strong class="text-pink">Paid / Confirmed</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span>Total Amount Paid:</span>
+                    <strong>$${totalCost.toFixed(2)}</strong>
+                  </div>
+                </div>
+
+                <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+              </div>
+            `;
+          });
+        }
+      }
+
+      renderCheckoutForm();
+    });
+  </script>
+</body>
+</html>

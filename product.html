@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | ÉLÉGANCE</title>
+  <meta name="description" content="View product specifications, materials, care instructions, and select custom sizes and colors.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary Express Shipping on Orders Over $100 &nbsp;|&nbsp; <span>CODE: ELEGANCE</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <button class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <a href="index.html" class="brand-logo">
+        ÉLÉGANCE<span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Shop</a>
+        <a href="shop.html?gender=women" class="nav-link">Women</a>
+        <a href="shop.html?gender=men" class="nav-link">Men</a>
+        <a href="shop.html?category=accessories" class="nav-link">Accessories</a>
+        <a href="shop.html?sort=newest" class="nav-link">New Arrivals</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html?search=true" class="icon-btn" aria-label="Search Products">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </a>
+
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+        </a>
+
+        <a href="cart.html" class="icon-btn" aria-label="Shopping Bag">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">ÉLÉGANCE<span class="logo-dot"></span></a>
+      <button class="icon-btn" id="mobile-drawer-close" aria-label="Close Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="shop.html" class="mobile-nav-link active">Shop All</a>
+      <a href="shop.html?gender=women" class="mobile-nav-link">Women's Collection</a>
+      <a href="shop.html?gender=men" class="mobile-nav-link">Men's Collection</a>
+      <a href="shop.html?category=accessories" class="mobile-nav-link">Accessories</a>
+      <a href="shop.html?sort=newest" class="mobile-nav-link">New Arrivals</a>
+      <a href="wishlist.html" class="mobile-nav-link">My Wishlist</a>
+      <a href="cart.html" class="mobile-nav-link">Shopping Bag</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <section class="section">
+      <div class="container" id="product-detail-container">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="section bg-soft-pink">
+      <div class="container">
+        <h2 class="section-title">You May Also Like</h2>
+        <p class="section-subtitle">Complementary Atelier Pieces</p>
+        <div class="product-grid" id="related-products-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <p>&copy; 2026 ÉLÉGANCE Atelier. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('product-detail-container');
+      const relatedGrid = document.getElementById('related-products-grid');
+
+      // Get Product ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = Number(urlParams.get('id')) || 101;
+
+      const product = PRODUCTS_DATA.find(p => p.id === productId) || PRODUCTS_DATA[0];
+
+      let selectedColor = product.colors && product.colors.length > 0 ? product.colors[0] : 'Default';
+      let selectedSize = product.sizes && product.sizes.length > 0 ? product.sizes[0] : 'Standard';
+      let quantity = 1;
+
+      const isWishlisted = AppState.isInWishlist(product.id);
+      const starsHTML = '★'.repeat(Math.floor(product.rating)) + '☆'.repeat(5 - Math.floor(product.rating));
+
+      // Render Details
+      container.innerHTML = `
+        <div class="product-detail-grid">
+          <!-- Left: Image Gallery -->
+          <div class="product-gallery">
+            <div class="main-image-wrapper">
+              <img id="main-product-img" src="${product.images[0]}" alt="${product.name}" class="main-image">
+            </div>
+            ${product.images.length > 1 ? `
+              <div class="thumbnail-list">
+                ${product.images.map((img, i) => `
+                  <div class="thumbnail-item ${i === 0 ? 'active' : ''}" data-img-src="${img}">
+                    <img src="${img}" alt="${product.name} view ${i+1}" class="thumbnail-img">
+                  </div>
+                `).join('')}
+              </div>
+            ` : ''}
+          </div>
+
+          <!-- Right: Info Panel -->
+          <div class="product-info-panel">
+            <span class="product-info-category">${product.category.toUpperCase()} &bull; ${product.gender.toUpperCase()}</span>
+            <h1 class="product-info-title">${product.name}</h1>
+            
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: var(--font-size-xs); color: #f59e0b;">
+              <span>${starsHTML}</span>
+              <span style="color: var(--color-text-muted);">(${product.reviewCount} customer reviews)</span>
+            </div>
+
+            <div class="product-info-price">
+              <span class="text-pink">$${product.price.toFixed(2)}</span>
+              ${product.originalPrice ? `<span style="font-size: var(--font-size-md); color: var(--color-text-light); text-decoration: line-through;">$${product.originalPrice.toFixed(2)}</span>` : ''}
+              ${product.discount > 0 ? `<span class="badge badge-dark">SAVE ${product.discount}%</span>` : ''}
+            </div>
+
+            <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); line-height: 1.7;">
+              ${product.description}
+            </p>
+
+            <!-- Color Swatches -->
+            ${product.colors && product.colors.length > 0 ? `
+              <div class="option-group">
+                <span class="option-title">Color: <strong id="selected-color-label">${selectedColor}</strong></span>
+                <div class="swatch-list">
+                  ${product.colors.map(c => `
+                    <button class="swatch-btn ${c === selectedColor ? 'active' : ''}" data-color="${c}">${c}</button>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Size Selection -->
+            ${product.sizes && product.sizes.length > 0 ? `
+              <div class="option-group">
+                <span class="option-title">Size: <strong id="selected-size-label">${selectedSize}</strong></span>
+                <div class="swatch-list">
+                  ${product.sizes.map(s => `
+                    <button class="swatch-btn ${s === selectedSize ? 'active' : ''}" data-size="${s}">${s}</button>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Quantity & Actions -->
+            <div class="option-group">
+              <span class="option-title">Quantity</span>
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="quantity-stepper">
+                  <button class="stepper-btn" id="qty-minus">-</button>
+                  <input type="text" id="qty-input" class="stepper-input" value="1" readonly>
+                  <button class="stepper-btn" id="qty-plus">+</button>
+                </div>
+
+                <button class="wishlist-btn ${isWishlisted ? 'active' : ''}" data-wishlist-id="${product.id}" style="position: static;" aria-label="Toggle Wishlist">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="${isWishlisted ? 'currentColor' : 'none'}" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="action-buttons-group">
+              <button id="add-to-bag-btn" class="btn btn-primary" style="flex: 1;">Add to Shopping Bag</button>
+              <button id="buy-now-btn" class="btn btn-secondary" style="flex: 1;">Buy Now</button>
+            </div>
+
+            <!-- Accordion Info -->
+            <div style="margin-top: 1rem;">
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <span>Material & Composition</span>
+                  <span>+</span>
+                </div>
+                <div class="accordion-content">
+                  ${product.material}
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <span>Care Instructions</span>
+                  <span>+</span>
+                </div>
+                <div class="accordion-content">
+                  ${product.careInstructions}
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <span>Shipping & Returns</span>
+                  <span>+</span>
+                </div>
+                <div class="accordion-content">
+                  Complimentary express shipping on orders over $100. Returns accepted within 30 days of delivery.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Thumbnail Click Event
+      document.querySelectorAll('.thumbnail-item').forEach(item => {
+        item.addEventListener('click', () => {
+          document.querySelectorAll('.thumbnail-item').forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+          const newSrc = item.getAttribute('data-img-src');
+          document.getElementById('main-product-img').src = newSrc;
+        });
+      });
+
+      // Color Swatch Selection
+      document.querySelectorAll('[data-color]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-color]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedColor = btn.getAttribute('data-color');
+          const label = document.getElementById('selected-color-label');
+          if (label) label.textContent = selectedColor;
+        });
+      });
+
+      // Size Swatch Selection
+      document.querySelectorAll('[data-size]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-size]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedSize = btn.getAttribute('data-size');
+          const label = document.getElementById('selected-size-label');
+          if (label) label.textContent = selectedSize;
+        });
+      });
+
+      // Stepper Handlers
+      const qtyInput = document.getElementById('qty-input');
+      const qtyMinus = document.getElementById('qty-minus');
+      const qtyPlus = document.getElementById('qty-plus');
+
+      if (qtyMinus && qtyPlus && qtyInput) {
+        qtyMinus.addEventListener('click', () => {
+          if (quantity > 1) {
+            quantity--;
+            qtyInput.value = quantity;
+          }
+        });
+        qtyPlus.addEventListener('click', () => {
+          quantity++;
+          qtyInput.value = quantity;
+        });
+      }
+
+      // Add to Bag Button
+      const addToBagBtn = document.getElementById('add-to-bag-btn');
+      if (addToBagBtn) {
+        addToBagBtn.addEventListener('click', () => {
+          AppState.addToCart(product.id, quantity, selectedColor, selectedSize);
+        });
+      }
+
+      // Buy Now Button
+      const buyNowBtn = document.getElementById('buy-now-btn');
+      if (buyNowBtn) {
+        buyNowBtn.addEventListener('click', () => {
+          AppState.addToCart(product.id, quantity, selectedColor, selectedSize);
+          window.location.href = 'checkout.html';
+        });
+      }
+
+      // Render Related Products (same category/gender, excluding current)
+      const related = PRODUCTS_DATA.filter(p => p.id !== product.id && (p.category === product.category || p.gender === product.gender)).slice(0, 4);
+      if (relatedGrid) {
+        relatedGrid.innerHTML = related.map(createProductCardHTML).join('');
+      }
+    });
+  </script>
+</body>
+</html>
