@@ -129,6 +129,20 @@ const AppState = {
   }
 };
 
+function getCategoryLabel(category) {
+  const labels = {
+    dresses: 'Dresses',
+    outerwear: 'Outerwear',
+    shirts: 'Shirts & Tops',
+    knitwear: 'Knitwear',
+    pants: 'Pants & Trousers',
+    bags: 'Handbags',
+    shoes: 'Shoes',
+    accessories: 'Accessories'
+  };
+  return labels[category] || category;
+}
+
 // Reusable Dynamic Product Card Component
 function createProductCardHTML(product) {
   const isWishlisted = AppState.isInWishlist(product.id);
@@ -160,7 +174,7 @@ function createProductCardHTML(product) {
       </div>
 
       <div class="product-card-info">
-        <span class="product-card-category">${product.category.toUpperCase()}</span>
+        <span class="product-card-category">${getCategoryLabel(product.category).toUpperCase()}</span>
         <h3 class="product-card-title">
           <a href="product.html?id=${product.id}">${product.name}</a>
         </h3>
