@@ -180,62 +180,82 @@
         <h2 class="section-title">Shop By Category</h2>
         <p class="section-subtitle">Curated Style Collections</p>
 
-        <div class="category-grid">
-          <!-- Women -->
-          <a href="shop.html?gender=women" class="category-card">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80" alt="Women's Collection" class="category-card-bg">
+        <div class="category-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+          <!-- Dresses -->
+          <a href="shop.html?category=dresses" class="category-card">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&auto=format&fit=crop&q=80" alt="Silk Dresses Collection" class="category-card-bg">
             <div class="category-card-overlay"></div>
             <div class="category-card-content">
-              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">COLLECTION</span>
-              <h3 class="category-card-title">Women</h3>
-              <span class="category-card-link">Explore Dresses & Tops &rarr;</span>
+              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">10+ ITEMS</span>
+              <h3 class="category-card-title">Dresses</h3>
+              <span class="category-card-link">Explore Silk & Evening &rarr;</span>
             </div>
           </a>
 
-          <!-- Men -->
-          <a href="shop.html?gender=men" class="category-card">
-            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&auto=format&fit=crop&q=80" alt="Men's Tailoring Collection" class="category-card-bg">
+          <!-- Outerwear -->
+          <a href="shop.html?category=outerwear" class="category-card">
+            <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?w=800&auto=format&fit=crop&q=80" alt="Outerwear Collection" class="category-card-bg">
             <div class="category-card-overlay"></div>
             <div class="category-card-content">
-              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">COLLECTION</span>
-              <h3 class="category-card-title">Men</h3>
-              <span class="category-card-link">Explore Suits & Shirts &rarr;</span>
+              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">10+ ITEMS</span>
+              <h3 class="category-card-title">Outerwear</h3>
+              <span class="category-card-link">Coats, Blazers & Trench &rarr;</span>
             </div>
           </a>
 
-          <!-- Accessories -->
-          <a href="shop.html?category=accessories" class="category-card">
-            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop&q=80" alt="Luxury Accessories" class="category-card-bg">
+          <!-- Handbags -->
+          <a href="shop.html?category=bags" class="category-card">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop&q=80" alt="Luxury Handbags" class="category-card-bg">
             <div class="category-card-overlay"></div>
             <div class="category-card-content">
-              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">ESSENTIALS</span>
-              <h3 class="category-card-title">Accessories</h3>
-              <span class="category-card-link">Bags, Watches & Jewelry &rarr;</span>
+              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">10+ ITEMS</span>
+              <h3 class="category-card-title">Handbags</h3>
+              <span class="category-card-link">Totes, Clutches & Leather &rarr;</span>
             </div>
           </a>
 
-          <!-- New Arrivals -->
-          <a href="shop.html?sort=newest" class="category-card">
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop&q=80" alt="New Arrivals Drops" class="category-card-bg">
+          <!-- Shoes -->
+          <a href="shop.html?category=shoes" class="category-card">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&auto=format&fit=crop&q=80" alt="Footwear Collection" class="category-card-bg">
             <div class="category-card-overlay"></div>
             <div class="category-card-content">
-              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">SEASONAL</span>
-              <h3 class="category-card-title">New Arrivals</h3>
-              <span class="category-card-link">Fresh Fashion Drops &rarr;</span>
+              <span class="badge badge-pink" style="margin-bottom: 0.5rem;">10+ ITEMS</span>
+              <h3 class="category-card-title">Shoes</h3>
+              <span class="category-card-link">Heels, Boots & Sneakers &rarr;</span>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 3. NEW ARRIVALS -->
+    <!-- 2.5 ACTIVE CATEGORY PRODUCTS SHOWCASE -->
     <section class="section bg-soft-pink">
       <div class="container">
-        <h2 class="section-title">New Arrivals</h2>
-        <p class="section-subtitle">Freshly Added To The Atelier</p>
+        <h2 class="section-title">Category Showcase</h2>
+        <p class="section-subtitle">Select a category to view active items</p>
 
-        <div class="product-grid" id="homepage-new-arrivals-grid">
+        <!-- Homepage Active Category Filter Tabs -->
+        <div class="category-chips-bar" id="home-category-tabs" style="margin-bottom: 2rem;">
+          <button class="category-chip active" data-home-category="all">All Products</button>
+          <button class="category-chip" data-home-category="dresses">Dresses (10)</button>
+          <button class="category-chip" data-home-category="outerwear">Outerwear (10)</button>
+          <button class="category-chip" data-home-category="shirts">Shirts & Tops (10)</button>
+          <button class="category-chip" data-home-category="knitwear">Knitwear (10)</button>
+          <button class="category-chip" data-home-category="pants">Pants (10)</button>
+          <button class="category-chip" data-home-category="bags">Handbags (10)</button>
+          <button class="category-chip" data-home-category="shoes">Shoes (10)</button>
+          <button class="category-chip" data-home-category="accessories">Accessories (10)</button>
+        </div>
+
+        <!-- Dynamic Category Products Grid -->
+        <div class="product-grid" id="homepage-category-grid">
           <!-- Dynamically populated via JS -->
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="shop.html" id="view-active-category-btn" class="btn btn-secondary">
+            View All Collection Items &rarr;
+          </a>
         </div>
       </div>
     </section>
@@ -454,6 +474,45 @@
           window.location.href = 'checkout.html';
         });
       }
+
+      // Render Homepage Active Category Showcase Section
+      const homeCategoryGrid = document.getElementById('homepage-category-grid');
+      const homeCategoryChips = document.querySelectorAll('#home-category-tabs .category-chip');
+      const viewActiveCategoryBtn = document.getElementById('view-active-category-btn');
+
+      function renderHomeCategory(selectedCat) {
+        if (!homeCategoryGrid) return;
+
+        let categoryItems = selectedCat === 'all'
+          ? PRODUCTS_DATA.slice(0, 8)
+          : PRODUCTS_DATA.filter(p => p.category === selectedCat);
+
+        homeCategoryGrid.innerHTML = categoryItems.map(createProductCardHTML).join('');
+        AppState.updateWishlistButtonsUI();
+
+        if (viewActiveCategoryBtn) {
+          if (selectedCat === 'all') {
+            viewActiveCategoryBtn.href = 'shop.html';
+            viewActiveCategoryBtn.innerHTML = 'View All Collection Items &rarr;';
+          } else {
+            viewActiveCategoryBtn.href = `shop.html?category=${selectedCat}`;
+            const catTitle = selectedCat.charAt(0).toUpperCase() + selectedCat.slice(1);
+            viewActiveCategoryBtn.innerHTML = `View All ${catTitle} Items in Shop &rarr;`;
+          }
+        }
+      }
+
+      homeCategoryChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          homeCategoryChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const cat = chip.getAttribute('data-home-category');
+          renderHomeCategory(cat);
+        });
+      });
+
+      // Initial render for homepage categories
+      renderHomeCategory('all');
 
       // Render Homepage New Arrivals (First 4 items)
       const newArrivalsGrid = document.getElementById('homepage-new-arrivals-grid');

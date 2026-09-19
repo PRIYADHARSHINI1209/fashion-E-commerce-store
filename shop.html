@@ -154,11 +154,11 @@
 
       <!-- Max Price Filter -->
       <div class="filter-group">
-        <h3 class="filter-title">Max Price: <span id="price-value" class="text-pink">$400</span></h3>
-        <input type="range" id="price-slider" class="price-range-slider" min="50" max="400" step="10" value="400">
+        <h3 class="filter-title">Max Price: <span id="price-value" class="text-pink">$600</span></h3>
+        <input type="range" id="price-slider" class="price-range-slider" min="30" max="600" step="10" value="600">
         <div class="price-range-labels">
-          <span>$50</span>
-          <span>$400</span>
+          <span>$30</span>
+          <span>$600</span>
         </div>
       </div>
 
@@ -400,7 +400,7 @@
       function resetAllFilters() {
         searchInput.value = '';
         sortSelect.value = 'featured';
-        priceSlider.value = 400;
+        priceSlider.value = 600;
         document.querySelector('input[name="category-filter"][value="all"]').checked = true;
         document.querySelector('input[name="gender-filter"][value="all"]').checked = true;
         filterAndRenderProducts();
