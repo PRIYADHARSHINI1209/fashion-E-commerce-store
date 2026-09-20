@@ -254,13 +254,20 @@
         </div>
       `;
 
-      // Thumbnail Click Event
+      // Thumbnail Click Event with smooth fade effect
       document.querySelectorAll('.thumbnail-item').forEach(item => {
         item.addEventListener('click', () => {
           document.querySelectorAll('.thumbnail-item').forEach(i => i.classList.remove('active'));
           item.classList.add('active');
           const newSrc = item.getAttribute('data-img-src');
-          document.getElementById('main-product-img').src = newSrc;
+          const mainImg = document.getElementById('main-product-img');
+          if (mainImg) {
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+              mainImg.src = newSrc;
+              mainImg.style.opacity = '1';
+            }, 120);
+          }
         });
       });
 
