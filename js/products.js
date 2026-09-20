@@ -1608,7 +1608,10 @@ const PRODUCTS_DATA = [
     price: 40.00,
     originalPrice: 50.00,
     discount: 20,
-    images: ["https://images.unsplash.com/photo-1616867623916-24876b5d92df?w=800&auto=format&fit=crop&q=80"],
+    images: [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&auto=format&fit=crop&q=80"
+    ],
     colors: ["Rose Soft", "Champagne", "Midnight Black"],
     sizes: ["One Size"],
     rating: 4.9,
@@ -1618,6 +1621,6 @@ const PRODUCTS_DATA = [
     careInstructions: "Hand wash cold.",
     featured: true,
     newArrival: true,
-    bestSeller: false
+    bestSeller: true
   }
 ];

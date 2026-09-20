@@ -526,7 +526,7 @@
         if (!homeCategoryGrid) return;
 
         let categoryItems = selectedCat === 'all'
-          ? PRODUCTS_DATA.slice(0, 8)
+          ? PRODUCTS_DATA.filter(p => p.featured).slice(0, 8)
           : PRODUCTS_DATA.filter(p => p.category === selectedCat);
 
         homeCategoryGrid.innerHTML = categoryItems.map(createProductCardHTML).join('');
