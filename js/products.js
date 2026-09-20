@@ -1608,7 +1608,7 @@ const PRODUCTS_DATA = [
     price: 40.00,
     originalPrice: 50.00,
     discount: 20,
-    images: ["https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&auto=format&fit=crop&q=80"],
+    images: ["https://images.unsplash.com/photo-1616867623916-24876b5d92df?w=800&auto=format&fit=crop&q=80"],
     colors: ["Rose Soft", "Champagne", "Midnight Black"],
     sizes: ["One Size"],
     rating: 4.9,
