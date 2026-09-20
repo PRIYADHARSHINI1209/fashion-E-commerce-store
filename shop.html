@@ -30,17 +30,14 @@
         ÉLÉGANCE<span class="logo-dot"></span>
       </a>
 
+      <!-- Desktop Navigation -->
       <nav class="nav-menu" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="shop.html" class="nav-link active">Shop All</a>
-        <a href="shop.html?category=dresses" class="nav-link">Dresses</a>
-        <a href="shop.html?category=outerwear" class="nav-link">Outerwear</a>
-        <a href="shop.html?category=shirts" class="nav-link">Shirts</a>
-        <a href="shop.html?category=knitwear" class="nav-link">Knitwear</a>
-        <a href="shop.html?category=pants" class="nav-link">Pants</a>
-        <a href="shop.html?category=bags" class="nav-link">Bags</a>
-        <a href="shop.html?category=shoes" class="nav-link">Shoes</a>
-        <a href="shop.html?category=accessories" class="nav-link">Accessories</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="shop.html?essentials=true" class="nav-link">Essentials</a>
+        <a href="shop.html?sort=newest" class="nav-link">New Arrivals</a>
+        <a href="wishlist.html" class="nav-link">Wishlist</a>
+        <a href="cart.html" class="nav-link">Cart</a>
       </nav>
 
       <div class="header-actions">
@@ -80,15 +77,9 @@
     </div>
     <nav class="mobile-nav-links">
       <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="shop.html" class="mobile-nav-link active">Shop All</a>
-      <a href="shop.html?category=dresses" class="mobile-nav-link">Dresses</a>
-      <a href="shop.html?category=outerwear" class="mobile-nav-link">Outerwear & Coats</a>
-      <a href="shop.html?category=shirts" class="mobile-nav-link">Shirts & Tops</a>
-      <a href="shop.html?category=knitwear" class="mobile-nav-link">Knitwear</a>
-      <a href="shop.html?category=pants" class="mobile-nav-link">Pants & Trousers</a>
-      <a href="shop.html?category=bags" class="mobile-nav-link">Handbags</a>
-      <a href="shop.html?category=shoes" class="mobile-nav-link">Shoes</a>
-      <a href="shop.html?category=accessories" class="mobile-nav-link">Accessories</a>
+      <a href="shop.html" class="mobile-nav-link">Shop All</a>
+      <a href="shop.html?essentials=true" class="mobile-nav-link">Wardrobe Essentials</a>
+      <a href="shop.html?sort=newest" class="mobile-nav-link">New Arrivals</a>
       <a href="wishlist.html" class="mobile-nav-link">My Wishlist</a>
       <a href="cart.html" class="mobile-nav-link">Shopping Bag</a>
     </nav>
@@ -291,6 +282,7 @@
       const initialCategory = urlParams.get('category');
       const initialSort = urlParams.get('sort');
       const initialSearch = urlParams.get('search');
+      const initialEssentials = urlParams.get('essentials');
 
       if (initialGender) {
         const radio = document.querySelector(`input[name="gender-filter"][value="${initialGender}"]`);
@@ -333,6 +325,9 @@
         updateChipsUI(selectedCategory);
 
         let filtered = PRODUCTS_DATA.filter(product => {
+          if (initialEssentials === 'true' && !product.bestSeller && !product.featured) {
+            return false;
+          }
           if (selectedCategory !== 'all' && product.category !== selectedCategory) {
             return false;
           }

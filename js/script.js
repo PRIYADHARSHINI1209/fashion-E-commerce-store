@@ -273,4 +273,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   AppState.updateWishlistButtonsUI();
+
+  // Highlight Active Navigation Links dynamically based on URL
+  function highlightActiveNavLinks() {
+    const currentPath = window.location.pathname.toLowerCase();
+    const searchParams = new URLSearchParams(window.location.search);
+
+    const isIndex = currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath === '';
+    const isShop = currentPath.endsWith('shop.html');
+    const isWishlist = currentPath.endsWith('wishlist.html');
+    const isCart = currentPath.endsWith('cart.html');
+
+    const desktopLinks = document.querySelectorAll('.nav-menu .nav-link');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links .mobile-nav-link');
+
+    if (!desktopLinks.length && !mobileLinks.length) return;
+
+    if (isIndex) {
+      desktopLinks.forEach(l => l.getAttribute('href') === 'index.html' ? l.classList.add('active') : l.classList.remove('active'));
+      mobileLinks.forEach(l => l.getAttribute('href') === 'index.html' ? l.classList.add('active') : l.classList.remove('active'));
+    } else if (isShop) {
+      const essentials = searchParams.get('essentials');
+      const sort = searchParams.get('sort');
+
+      let targetHref = 'shop.html';
+      if (essentials === 'true') targetHref = 'shop.html?essentials=true';
+      else if (sort === 'newest') targetHref = 'shop.html?sort=newest';
+
+      desktopLinks.forEach(l => l.getAttribute('href') === targetHref ? l.classList.add('active') : l.classList.remove('active'));
+      mobileLinks.forEach(l => l.getAttribute('href') === targetHref ? l.classList.add('active') : l.classList.remove('active'));
+    } else if (isWishlist) {
+      desktopLinks.forEach(l => l.getAttribute('href') === 'wishlist.html' ? l.classList.add('active') : l.classList.remove('active'));
+      mobileLinks.forEach(l => l.getAttribute('href') === 'wishlist.html' ? l.classList.add('active') : l.classList.remove('active'));
+    } else if (isCart) {
+      desktopLinks.forEach(l => l.getAttribute('href') === 'cart.html' ? l.classList.add('active') : l.classList.remove('active'));
+      mobileLinks.forEach(l => l.getAttribute('href') === 'cart.html' ? l.classList.add('active') : l.classList.remove('active'));
+    }
+  }
+
+  highlightActiveNavLinks();
 });
