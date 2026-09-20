@@ -1469,7 +1469,7 @@ const PRODUCTS_DATA = [
     originalPrice: 85.00,
     discount: 23,
     images: [
-      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&auto=format&fit=crop&q=80"
+      "images/silk_floral_scarf.jpg"
     ],
     colors: ["Pink Peony", "Ivory Blossom"],
     sizes: ["65x65cm"],
@@ -1611,7 +1611,7 @@ const PRODUCTS_DATA = [
     originalPrice: 50.00,
     discount: 20,
     images: [
-      "https://images.unsplash.com/photo-1553802921-acdf7e60aa68?w=800&auto=format&fit=crop&q=80"
+      "images/silk_sleep_eye_mask.jpg"
     ],
     colors: ["Rose Soft", "Champagne", "Midnight Black"],
     sizes: ["One Size"],
