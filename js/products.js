@@ -1468,7 +1468,10 @@ const PRODUCTS_DATA = [
     price: 65.00,
     originalPrice: 85.00,
     discount: 23,
-    images: ["https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=800&auto=format&fit=crop&q=80"],
+    images: [
+      "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?w=800&auto=format&fit=crop&q=80"
+    ],
     colors: ["Pink Peony", "Ivory Blossom"],
     sizes: ["65x65cm"],
     rating: 4.8,
@@ -1476,8 +1479,8 @@ const PRODUCTS_DATA = [
     description: "Hand-rolled edge square silk scarf printed with bespoke floral motifs.",
     material: "100% Silk Twill",
     careInstructions: "Dry clean or hand wash cold.",
-    featured: false,
-    newArrival: false,
+    featured: true,
+    newArrival: true,
     bestSeller: false
   },
   {
@@ -1609,7 +1612,7 @@ const PRODUCTS_DATA = [
     originalPrice: 50.00,
     discount: 20,
     images: [
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1617897903246-719242758050?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&auto=format&fit=crop&q=80"
     ],
     colors: ["Rose Soft", "Champagne", "Midnight Black"],
